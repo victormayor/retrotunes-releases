@@ -1,5 +1,7 @@
 # RetroTunes — sincronizar y reproducir el iPod en Windows sin iTunes
 
+![RetroTunes en Windows Terminal: interfaz estilo Norton Commander con el panel de listas, la lista de canciones de un álbum en FLAC y el reproductor con ecualizador de espectro](docs/captura.jpg)
+
 RetroTunes es un **gestor, sincronizador y reproductor de iPod para Windows 10 y 11**,
 pensado como **alternativa a iTunes** para quien todavía usa un iPod Classic o Nano. Indicas
 una carpeta de música del PC y RetroTunes mantiene el iPod como un **espejo exacto** de esa
@@ -59,6 +61,11 @@ iPod igual que las demás.
 se abren con su letra resaltada y colores ANSI de 24 bits idénticos a los del DOS. Todo se
 maneja también con el ratón: clic para seleccionar, doble clic para reproducir, clic derecho
 para editar metadatos, rueda para desplazar y clic en la barra de progreso para saltar.
+
+**Avisos con mascota.** Un panel de notificaciones con un pequeño personaje animado que
+acompaña lo que ocurre mientras usas la aplicación.
+
+<p align="center"><img src="docs/noti.jpg" alt="Panel de notificaciones de RetroTunes con una mascota animada" width="220"></p>
 
 **Seguridad de los datos.** Una **vista previa** muestra qué se copiaría y qué se borraría sin
 tocar el iPod, se hace una **copia de seguridad** de la base de datos antes de la primera
