@@ -6,8 +6,9 @@ RetroTunes es un **gestor, sincronizador y reproductor de iPod para Windows 10 y
 pensado como **alternativa a iTunes** para quien todavía usa un iPod Classic o Nano. Indicas
 una carpeta de música del PC y RetroTunes mantiene el iPod como un **espejo exacto** de esa
 carpeta: copia lo que falta, borra lo que ya no está y crea una lista de reproducción por
-cada subcarpeta. Además reproduce tu música, edita metadatos y carátulas, y descarga
-canciones desde Soulseek, todo con una **interfaz de texto estilo Norton Commander**.
+cada subcarpeta. Además reproduce tu música, edita metadatos y carátulas, y está
+**integrado con Soulseek** para buscar y descargar música directamente en tu biblioteca,
+todo con una **interfaz de texto estilo Norton Commander**.
 
 Este repositorio contiene solo los **instaladores públicos**. El código fuente es privado.
 
@@ -63,7 +64,8 @@ maneja también con el ratón: clic para seleccionar, doble clic para reproducir
 para editar metadatos, rueda para desplazar y clic en la barra de progreso para saltar.
 
 **Avisos con mascota.** Un panel de notificaciones con un pequeño personaje animado que
-acompaña lo que ocurre mientras usas la aplicación.
+acompaña lo que ocurre mientras usas la aplicación (y tranquilo: se puede desactivar para
+que no moleste).
 
 <p align="center"><img src="docs/noti.jpg" alt="Panel de notificaciones de RetroTunes con una mascota animada" width="220"></p>
 
