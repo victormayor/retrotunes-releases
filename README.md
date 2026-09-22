@@ -10,6 +10,11 @@ cada subcarpeta. Además reproduce tu música, edita metadatos y carátulas, y e
 **integrado con Soulseek** para buscar y descargar música directamente en tu biblioteca,
 todo con una **interfaz de texto estilo Norton Commander**.
 
+Y esa misma biblioteca **te la llevas fuera del PC**: RetroTunes puede servirla por
+streaming para escucharla en el **móvil** y en el **coche**, con una app propia de
+**Android / Android Auto** o, desde el **iPhone** y **CarPlay**, con cualquier cliente
+**Subsonic** gratuito como Amperfy. No hace falta copiar nada al teléfono.
+
 Este repositorio contiene solo los **instaladores públicos**. El código fuente es privado.
 
 ## Descargar
@@ -26,9 +31,14 @@ Ambos son autoextraíbles, preguntan la carpeta de instalación y crean el acces
 escritorio. Como los `.exe` **no están firmados**, Windows SmartScreen mostrará un aviso: pulsa
 "Más información" → "Ejecutar de todas formas".
 
-Una vez instalado, RetroTunes **se actualiza solo, en silencio**: al arrancar comprueba si hay
-una versión nueva y la deja aplicada para el siguiente arranque, sin tocar tu configuración ni
-tus listas.
+En la misma página está el **`RetroTunes-Android-*.apk`**, la app para el móvil: descárgalo en
+el teléfono y ábrelo permitiendo la instalación de orígenes desconocidos. **En el iPhone no hay
+nada que descargar aquí**: se usa una app gratuita de la App Store (ver más abajo). El
+`RetroTunes-App.zip` es solo para el actualizador automático; no hace falta bajarlo a mano.
+
+Una vez instalado, RetroTunes **comprueba solo** si hay una versión nueva al arrancar. Cuando
+la hay, te lo dice en el menú **Ayuda**, con las novedades y un botón para instalarla; se
+aplica al reiniciar y no toca tu configuración ni tus listas.
 
 ## Qué hace
 
@@ -44,6 +54,31 @@ reproducir la música; no basta con copiar los archivos a la unidad.
 Windows (OGG/OPUS con el códec gratuito Web Media Extensions). Incluye barra de progreso con
 **clic para saltar** a cualquier punto, avance automático al terminar, modo aleatorio, y un
 **ecualizador de espectro** que muestra el nivel real de la canción en 7 bandas de frecuencia.
+
+**Escúchalo en el móvil y en el coche.** RetroTunes puede **servir tu biblioteca por
+streaming** desde el PC, en casa por wifi o desde fuera por Internet. La música no se copia al
+teléfono: se reproduce directamente desde el ordenador, que basta con tenerlo encendido y con
+RetroTunes abierto. Funciona de dos maneras, a la vez y con el mismo servidor:
+
+- **Android y Android Auto** — con la app **RetroTunes para Android** (el `.apk` está en las
+  descargas). Tiene los mismos colores que la versión de PC, con listas, controles de
+  reproducción, barra de progreso por bloques, **aleatorio de tres posiciones** (no / canción /
+  lista, que engancha otra lista al acabar para que la música no pare) y **carátulas al estilo
+  consola de 16 bits**. En el coche aparece como una app de música más de Android Auto.
+- **iPhone y CarPlay** — RetroTunes publica también una **API compatible con Subsonic**, así
+  que se escucha desde el iPhone con una app gratuita de la App Store como **Amperfy**, sin
+  cuenta de desarrollador de Apple ni compilar nada: basta con dar la dirección, un usuario y
+  una contraseña. Sirve cualquier otro cliente Subsonic.
+
+<p align="center">
+  <img src="docs/android-reproductor.png" alt="Reproductor de la app de RetroTunes para Android, en azul y cian, con la carátula al estilo de una consola de 16 bits" width="300">
+  <img src="docs/carplay.jpg" alt="RetroTunes sonando en la pantalla del coche a través de CarPlay, con título, artista, álbum y carátula" width="430">
+</p>
+
+El acceso va protegido: la app de Android usa un **código de acceso** que genera el propio
+programa y el iPhone, **usuario y contraseña** propios (guardada cifrada con DPAPI). Solo se
+sirve la música de la carpeta publicada, nunca el resto del disco. Y si prefieres no abrir
+puertos en el router, se puede publicar **a través de tu propio servidor web con HTTPS**.
 
 **Editor de metadatos y carátulas.** Corrige título, artista, álbum, número de pista, género y
 año en un editor retro. **Buscar online** rellena los campos desde la iTunes Search API
@@ -79,7 +114,11 @@ tanto destructiva) por diseño.
 - **Windows 10 y 11.** Se ve mejor en Windows Terminal (colores de 24 bits).
 - **iPod Classic 6G** e **iPod Nano 3G, 4G y 5G** (checksum `hash58`) — totalmente soportados.
 - **iPod Video, Photo, Mini y Nano 1G/2G** (sin checksum) — deberían funcionar.
-- **iPod Touch, iPhone y iPod Nano 6G/7G** (`hashAB`) — **no** están soportados.
+- **iPod Touch, iPhone y iPod Nano 6G/7G** (`hashAB`) — **no** están soportados *como iPod*
+  (no se les puede escribir la base de datos), pero **sí** puedes escuchar tu biblioteca en
+  ellos por streaming, con Amperfy.
+- Para escuchar fuera del PC: **Android 7.0 o posterior** (app propia y Android Auto) y
+  **iPhone** con Amperfy —o cualquier otro cliente Subsonic—, incluido **CarPlay**.
 
 ## Preguntas frecuentes
 
@@ -94,7 +133,22 @@ lo que no esté en ella se borra del iPod. Usa la vista previa para ver los camb
 aplicarlos, y ten tu música organizada en el PC.
 
 **¿Funciona sin conexión a internet?** Sí, con el instalador offline. Solo se necesita internet
-para descargar carátulas y para buscar en Soulseek.
+para descargar carátulas, para buscar en Soulseek y para escuchar desde fuera de casa en el
+móvil.
+
+**¿Puedo escuchar mi música en el móvil?** Sí, por streaming desde el PC. En **Android** con la
+app de RetroTunes (el `.apk` de las descargas), que además funciona en **Android Auto**. En
+**iPhone**, con una app gratuita de la App Store compatible con **Subsonic** —por ejemplo
+**Amperfy**—, que también vale para **CarPlay**. No se copia música al teléfono y no hay que
+pagar nada.
+
+**¿Tengo que dejar el PC encendido?** Para escuchar en el móvil, sí: la música se transmite
+desde el ordenador. Lo que sincronizas con el iPod, en cambio, se queda en el iPod y suena sin
+depender de nada.
+
+**¿Hace falta abrir puertos en el router?** Solo si quieres escuchar **fuera de casa**.
+RetroTunes intenta abrirlo solo por UPnP; y si tienes un servidor web propio con HTTPS, puede
+publicarse a través de él y no abrir nada.
 
 **¿Es gratis?** Sí. Los instaladores de este repositorio son de descarga libre.
 
@@ -103,5 +157,9 @@ para descargar carátulas y para buscar en Soulseek.
 *Palabras clave: sincronizar iPod Classic en Windows 11 sin iTunes, alternativa a iTunes para
 iPod, pasar música al iPod Nano, copiar FLAC al iPod, gestor de biblioteca de iPod para PC,
 reproductor de iPod para Windows, editor de metadatos MP3 y FLAC, cliente de Soulseek para
-Windows. Keywords: sync iPod Classic on Windows without iTunes, iTunes alternative for iPod,
-transfer music to iPod Nano on PC, iPod manager and player for Windows.*
+Windows, servidor de música propio en casa, escuchar mi música del PC en el móvil, servidor
+Subsonic para Windows, Amperfy, música en Android Auto y CarPlay desde el ordenador.
+Keywords: sync iPod Classic on Windows without iTunes, iTunes alternative for iPod, transfer
+music to iPod Nano on PC, iPod manager and player for Windows, self-hosted music streaming
+server, Subsonic server for Windows, stream your own music library to Android Auto and
+CarPlay.*
